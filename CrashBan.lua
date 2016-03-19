@@ -1,7 +1,7 @@
-local plr = game.Players.LocalPlayer
 --3/19/2016
 
 --Allows you to add banned players with cb/PLAYERNAME, not case sensitive. Will crashban all players in the table.
+local plr = game.Players.LocalPlayer
 local BannedPlayers = {}
 
 function getPlayer(partName)
