@@ -1,4 +1,4 @@
---Still working on this
+--3/19/2016
 
 --Gives the player a gun holster on their leg, select E to take out/put away the gun. Click to fire
 --Spins player in a circle firing in every direction.
