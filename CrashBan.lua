@@ -5,7 +5,7 @@ local plr = game.Players.LocalPlayer
 local BannedPlayers = {}
 
 function getPlayer(partName)
-	for _, v in pairs(game.Players:GetPlayers()) do
+	for _, v in pairs(game:GetService("Players"):GetPlayers()) do
 		if v.Name:lower():match("^"..partName:lower()) then
 			return v
 		else
@@ -15,7 +15,7 @@ function getPlayer(partName)
 end
 
 
-game.Players.PlayerAdded:connect(function(plr)
+game:GetService("Players").PlayerAdded:connect(function(plr)
 	for i = 1,#BannedPlayers do
 		if plr.Name:lower() == BannedPlayers[i]:lower() then
 			print(plr.Name)
