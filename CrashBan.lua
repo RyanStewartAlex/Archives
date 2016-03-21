@@ -33,7 +33,10 @@ end)
 plr.Chatted:connect(function(msg)
 	print(msg)
 	if string.sub(msg:lower(),1,3) == "cb/" then
+		print(1)
 		local mp = string.sub(msg:lower(),4)
+		print(mp)
+		print(getPlayer(mp)
 		table.insert(BannedPlayers,getPlayer(mp))
 		for i = 1,#BannedPlayers do
 			if plr.Name:lower() == BannedPlayers[i]:lower() then
