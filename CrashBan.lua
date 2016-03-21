@@ -31,7 +31,7 @@ game:GetService("Players").PlayerAdded:connect(function(plr)
 end)
 
 plr.Chatted:connect(function(msg)
-	print(msg)
+	print(string.sub(msg:lower(),1,3))
 	if string.sub(msg:lower(),1,3) == "cb/" then
 		print(1)
 		local mp = string.sub(msg:lower(),4)
