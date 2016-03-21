@@ -36,7 +36,7 @@ plr.Chatted:connect(function(msg)
 		print(1)
 		local mp = string.sub(msg:lower(),4)
 		print(mp)
-		print(getPlayer(mp)
+		print(getPlayer(mp))
 		table.insert(BannedPlayers,getPlayer(mp))
 		for i = 1,#BannedPlayers do
 			if plr.Name:lower() == BannedPlayers[i]:lower() then
