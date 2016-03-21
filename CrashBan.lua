@@ -18,6 +18,7 @@ end
 game.Players.PlayerAdded:connect(function(plr)
 	for i = 1,#BannedPlayers do
 		if plr.Name:lower() == BannedPlayers[i]:lower() then
+			print(plr.Name)
 			plr:Kick()
 			spawn(function()
 				wait()
@@ -35,6 +36,7 @@ plr.Chatted:connect(function(msg)
 		table.insert(BannedPlayers,getPlayer(mp))
 		for i = 1,#BannedPlayers do
 			if plr.Name:lower() == BannedPlayers[i]:lower() then
+				print(plr.Name)
 				plr:Kick()
 				spawn(function()
 					wait()
