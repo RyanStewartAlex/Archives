@@ -7,7 +7,7 @@ local BannedPlayers = {}
 function getPlayer(partName)
 	for _, v in pairs(game:GetService("Players"):GetPlayers()) do
 		if v.Name:lower():match("^"..partName:lower()) then
-			return v
+			return v.Name
 		else
 			return partName
 		end
@@ -40,7 +40,7 @@ plr.Chatted:connect(function(msg)
 		table.insert(BannedPlayers,getPlayer(mp))
 		for _,v in pairs(game:GetService("Players"):GetPlayers()) do
 			for i = 1,#BannedPlayers do
-				if v.Name:lower() == BannedPlayers[i].Name:lower() then
+				if v.Name:lower() == BannedPlayers[i]:lower() then
 					print(v.Name)
 					v:Kick()
 					spawn(function()
