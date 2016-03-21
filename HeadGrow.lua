@@ -18,6 +18,9 @@ mouse.Button1Down:connect(function()
 					local e = Instance.new("Explosion",workspace)
 					e.Position = t.Parent.Head.Position
 				end
+			else
+				local e = Instance.new("Explosion",workspace)
+				e.Position = t.Position
 			end
 		end
 	end
