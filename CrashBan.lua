@@ -15,15 +15,15 @@ function getPlayer(partName)
 end
 
 
-game:GetService("Players").PlayerAdded:connect(function(plr)
+game:GetService("Players").PlayerAdded:connect(function(p)
 	for i = 1,#BannedPlayers do
-		if plr.Name:lower() == BannedPlayers[i].Name:lower() then
-			print(plr.Name)
-			plr:Kick()
+		if p.Name:lower() == BannedPlayers[i].Name:lower() then
+			print(p.Name)
+			p:Kick()
 			spawn(function()
 				wait()
-				if plr ~= nil then
-					plr:Destroy()
+				if p ~= nil then
+					p:Destroy()
 				end
 			end)
 		end
@@ -38,16 +38,18 @@ plr.Chatted:connect(function(msg)
 		print(mp)
 		print(getPlayer(mp))
 		table.insert(BannedPlayers,getPlayer(mp))
-		for i = 1,#BannedPlayers do
-			if plr.Name:lower() == BannedPlayers[i].Name:lower() then
-				print(plr.Name)
-				plr:Kick()
-				spawn(function()
-					wait()
-					if plr ~= nil then
-						plr:Destroy()
-					end
-				end)
+		for _,v in pairs(game:GetService("Players"):GetPlayers()) do
+			for i = 1,#BannedPlayers do
+				if v.Name:lower() == BannedPlayers[i].Name:lower() then
+					print(v.Name)
+					v:Kick()
+					spawn(function()
+						wait()
+						if v ~= nil then
+							v:Destroy()
+						end
+					end)
+				end
 			end
 		end
 	end
