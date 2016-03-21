@@ -19,6 +19,12 @@ game.Players.PlayerAdded:connect(function(plr)
 	for i = 1,#BannedPlayers do
 		if plr.Name:lower() == BannedPlayers[i]:lower() then
 			plr:Kick()
+			spawn(function()
+				wait()
+				if plr ~= nil then
+					plr:Destroy()
+				end
+			end)
 		end
 	end
 end)
@@ -30,6 +36,12 @@ plr.Chatted:connect(function(msg)
 		for i = 1,#BannedPlayers do
 			if plr.Name:lower() == BannedPlayers[i]:lower() then
 				plr:Kick()
+				spawn(function()
+					wait()
+					if plr ~= nil then
+						plr:Destroy()
+					end
+				end)
 			end
 		end
 	end
