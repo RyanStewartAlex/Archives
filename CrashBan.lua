@@ -31,6 +31,7 @@ game:GetService("Players").PlayerAdded:connect(function(plr)
 end)
 
 plr.Chatted:connect(function(msg)
+	print(msg)
 	if string.sub(msg:lower(),1,3) == "cb/" then
 		local mp = string.sub(msg:lower(),4)
 		table.insert(BannedPlayers,getPlayer(mp))
