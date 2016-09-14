@@ -1,6 +1,4 @@
--- Bat Mobile Script --
--- Local Script --
--- Made by Immunidon (Not the script) --
+-- Credits to Immunidon
 
 print("Loaded")
 local modelName="BatMobile"
